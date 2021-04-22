@@ -50,6 +50,7 @@ function search() {
         teperatureDescription.innerHTML = main;
         humidityElement.innerHTML = `Humidity: ${humidity}%`;
         iconDefine(icon);
+        searchbar.value="";
     })
 }
 
