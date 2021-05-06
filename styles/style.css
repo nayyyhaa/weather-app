@@ -5,9 +5,8 @@
     box-sizing: border-box;
     
 }
-body{
+.content{
     height: 100vh;
-    margin: 0rem 2rem;
     object-fit: cover;
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -16,16 +15,54 @@ body{
     justify-content: center;
     background: linear-gradient(to right,#A7BFE8,#eaafc8);
 }
+
+/*toggle*/
+.dark {
+    background: linear-gradient(to right, #2b5876, #2E1437);
+}
+.toggle{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.dark .toggle{
+    background: white;
+}
+.toggle::before {
+    content: '\f186';
+    font-family: "FontAwesome";
+    color: white;
+}
+.dark .toggle::before{
+    content: '\f185';
+    font-family: "FontAwesome";
+    color: black;
+}
+/*box*/
+
 .box{
     background: linear-gradient(120deg,rgba(49, 47, 47, 0.6),rgba(119, 118, 118, 0.7));
-    width: 100%;
-    max-width: 40rem;
+    min-width: 60vw;
+    margin: 0 2rem;
     border-radius: 2rem;
     padding: 2rem;
     color: white;
     box-shadow: 5px 10px 10px grey;
     word-break: break-all;
 }
+.dark .box{
+    background: linear-gradient(120deg,rgba(160, 159, 159, 0.6),rgba(236, 236, 236, 0.7));
+    color: black;
+}
+
 .search {
     display: flex;
     justify-content: center;
@@ -38,6 +75,10 @@ body{
     color: white;
     width: calc(100% - 100px);
     font-size: 1.25rem;
+}
+.dark .search-bar {
+    background-color: white;
+    color: black;
 }
 .search-button {
     border: none;
@@ -70,4 +111,9 @@ body{
 .temperature-degree{
     font-weight: bold;
     font-size: 1.5rem;
+}
+@media screen and (max-width:600px){
+    *{
+        font-size: 80%;
+    }
 }
